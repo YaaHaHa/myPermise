@@ -33,6 +33,7 @@ function myPromise(executor) {
     this.rejectedList = [];
     // 定义一个函数，让executor里面的resolve用，下面的reject同理
     // 作用：改state，接value
+    // 这里是箭头函数嗷，不然this就指岔劈了，值window了，因为resolve是在exector内调用的,exector是window调用的，要么用普通函数后在exector那里bind
     const resolve = (value) => {
         if (this.state === 'pending') {
             // 只能从pending所以要有个if
@@ -160,6 +161,7 @@ myPromise.all = function (promises) {
         if (promises.length === 0) {
             resolve([])
         }
+        if(promises)
         for (let p = 0; p < promises.length; p++) {
             promises[p].then((value) => {
                 // promise中promise的顺序与resultPromisesList
