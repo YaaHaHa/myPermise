@@ -33,7 +33,12 @@ function myPromise(executor) {
             }
         }
     }
+
     // 123321 ---feature
+
+
+    // 444444 ---master
+
     const reject = (reason) => {
         if (this.state === 'pending') {
             this.state = 'rejected';
