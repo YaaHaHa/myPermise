@@ -73,7 +73,8 @@
                 let args = arguments;
                 let now =new Date();
                 if(now - previous >delay){
-                    
+                    previous = now;
+                    fn.call(this,args)
                 }
             }
         }
