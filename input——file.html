@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            height: 300px;
+            width: 300px;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .upload {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+        }
+
+        .add {
+            background-color: #F8F8F8;
+            color: #666;
+            height: 284px;
+            padding: 8px 0;
+            text-align: center;
+            line-height: 284px;
+        }
+        
+    </style>
 </head>
+
 <body>
-    
+    <li>
+        <input type="file" class="upload" name="avatar" id="avatar" accept="image/png,image/jpeg,image/gif,image/jpg"
+            multiple>
+        <div class="add">
+            <p>点击上传</p>
+        </div>
+
+    </li>
+    <script type="text/javascript">
+        let upload = document.querySelector('.upload');
+        upload.addEventListener('change',()=>{
+            console.log(this);
+        })
+    </script>
 </body>
+
 </html>
